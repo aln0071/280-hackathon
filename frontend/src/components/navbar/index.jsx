@@ -17,6 +17,22 @@ const sections = {
             "FDI Inflows (USD)",
             "FDI Outflows (USD)"
         ]
+    },
+    "Debt Services": {
+        navigateTo: 'debt',
+        subsections: [
+            "Reserves",
+            "GNI",
+            "Total Debt (%)"
+        ]
+    },
+    "Crops": {
+        navigateTo: 'crops',
+        subsections: [
+            "Banana",
+            "Mangos",
+            "Walnuts"
+        ]
     }
 }
 
