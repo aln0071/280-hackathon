@@ -11,3 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  padding: 15px;
+}
+
+.header {
+  grid-area: header;
+  border-bottom: 2px solid gainsboro;
+  display: grid;
+  grid-template-columns: 90px auto 90px;
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.navbar details {
+  padding-bottom: 10px;
+}
+
+.navbar details[open] {
+  padding: 0px;
+}
+
+.country-flag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contents {
+  grid-area: contents;
+  border-left: 2px solid gainsboro;
+}
+
+.footer {
+  grid-area: footer;
+  border-top: 2px solid gainsboro;
+  text-align: center;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 280px auto;
+  grid-template-rows: 60px auto 90px;
+  min-height: 100vh;
+  grid-template-areas:
+    "header header"
+    "navbar contents"
+    "footer footer";
+}
