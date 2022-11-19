@@ -1,28 +1,58 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom'
+
+const sections = {
+    "Macroeconomic (USD)": {
+        navigateTo: '',
+        subsections: [
+            "GDP (USD)",
+            "FDI Inflows (USD)",
+            "FDI Outflows (USD)"
+        ]
+    },
+    "Agricultural": {
+        navigateTo: 'agricultural',
+        subsections: [
+            "GDP (USD)",
+            "FDI Inflows (USD)",
+            "FDI Outflows (USD)"
+        ]
+    }
+}
 
 export default function Navbar() {
+
+    const navigate = useNavigate();
+    const [openSections, setOpenSections] = React.useState([]);
+
+    const toggleSection = (sectionNumber) => {
+        const newOpenSections = [...openSections]
+        newOpenSections[sectionNumber] = openSections[sectionNumber] ? false : true;
+        setOpenSections(newOpenSections);
+    }
+
     return <div className="navbar">
-        <details open>
-            <summary>
-                Macroeconomic (USD)
-            </summary>
-            <ul>
-                <li>GDP (USD)</li>
-                <li>FDI Inflows (USD)</li>
-                <li>FDI Outflows (USD)</li>
-            </ul>
-        </details>
-        <details open>
-            <summary>
-                Agricultural
-            </summary>
-            <ul>
-                <li>Contribution of Agri (%GDP)</li>
-                <li>Credit</li>
-                <li>Fertilizers</li>
-                <li>Fertilizers PROD</li>
-            </ul>
-        </details>
+        {
+            Object.keys(sections).map((section, index) =>
+                <div key={section}>
+                    <div className="nav-main-item">
+                        <span onClick={() => toggleSection(index)} className="nav-arrow">
+                            {openSections[index] ? <span className="nav-right-arrow">&#9656;</span> : <span className="nav-down-arrow">&#9660;</span> }
+                        </span>
+                        <span className="nav-main-section" onClick={() => {navigate(sections[section].navigateTo)}}>{section}</span>
+                    </div>
+                    {!openSections[index] &&
+                        <ul>
+                            {
+                                sections[section].subsections.map(subsection =>
+                                    <li key={`${section}${subsection}`}>{subsection}</li>
+                                )
+                            }
+                        </ul>
+                    }
+                </div>
+            )
+        }
         Import/Export Flow
     </div>
 }

@@ -33,6 +33,7 @@ code {
 
 .navbar details {
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
 .navbar details[open] {
@@ -75,4 +76,25 @@ code {
     "header header"
     "navbar contents"
     "footer footer";
+}
+
+.nav-arrow {
+  font-size: 20px;
+}
+
+.nav-main-item {
+  /* display: grid;
+  grid-template-columns: 20px auto; */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-right-arrow {
+  padding-right: 2px;
+}
+
+.nav-down-arrow {
+  margin-left: -3px;
+  font-size: 17px;
 }
