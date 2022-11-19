@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'
+import arrowRight from '../../icons/arrow-right.svg';
+import arrowDown from '../../icons/arrow-down.svg';
 
 const sections = {
     "Macroeconomic (USD)": {
@@ -53,7 +55,7 @@ export default function Navbar() {
                 <div key={section}>
                     <div className="nav-main-item">
                         <span onClick={() => toggleSection(index)} className="nav-arrow">
-                            {openSections[index] ? <span className="nav-right-arrow">&#9656;</span> : <span className="nav-down-arrow">&#9660;</span> }
+                            {openSections[index] ? <img src={arrowRight} width={10} alt="arrow-right" /> : <img src={arrowDown} width={10} alt="arrow-down" /> }
                         </span>
                         <span className="nav-main-section" onClick={() => {navigate(sections[section].navigateTo)}}>{section}</span>
                     </div>

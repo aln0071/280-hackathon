@@ -79,7 +79,6 @@ code {
 }
 
 .nav-arrow {
-  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,10 +93,6 @@ code {
 .nav-main-section {
   display: flex;
   align-items: center;
-}
-
-.nav-down-arrow {
-  font-size: 18px;
 }
 
 .navbar span, .navbar li {
