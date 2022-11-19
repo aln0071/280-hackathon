@@ -61,7 +61,7 @@ export default function Navbar() {
                         <ul>
                             {
                                 sections[section].subsections.map(subsection =>
-                                    <li key={`${section}${subsection}`}>{subsection}</li>
+                                    <li key={`${section}${subsection}`} draggable>{subsection}</li>
                                 )
                             }
                         </ul>
