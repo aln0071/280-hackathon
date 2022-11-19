@@ -99,3 +99,7 @@ code {
 .nav-down-arrow {
   font-size: 18px;
 }
+
+.navbar span, .navbar li {
+  cursor: pointer;
+}
