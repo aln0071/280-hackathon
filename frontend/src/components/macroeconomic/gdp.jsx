@@ -11,7 +11,15 @@ export default function GDP(props) {
     const [selectedYear, setSelectedYear] = useState();
     const [selectedIndex, setSelectedIndex] = useState();
     const [annotationText, setAnnotationText] = useState();
-    const [annotations, setAnnotations] = useState([]);
+    const [annotations, setAnnotations] = useState(
+        () => {
+            const ans = localStorage.getItem('gdpAnnotations')
+            if (ans != null) return JSON.parse(ans)
+        
+            else {
+              return []
+            }
+          });
 
 
 
@@ -72,24 +80,14 @@ export default function GDP(props) {
       ];
 
     useEffect(() => {
-        const getAnnotations = async () => {
-            let ans = []
-            if(localStorage.getItem('gdpAnnotations')){
-                ans = await JSON.parse(localStorage.getItem('gdpAnnotations'));
-            }
-            setAnnotations(ans) 
-
-        }
-            getAnnotations().then(res=>
-                {
-                    fetchCsv(props.country, props.start, props.end);
-                });
+    
+        fetchCsv(props.country, props.start, props.end);
 
     }, [props]);
 
 
     function annotate (e){
-        e.preventDefault();
+        // e.preventDefault();
         console.log(selectedYear, selectedIndex, annotationText);
         let ans = annotations;
         let index = ans.findIndex((item => item.year === selectedYear));
@@ -107,7 +105,7 @@ export default function GDP(props) {
         }
         setAnnotations(ans)
         localStorage.setItem("gdpAnnotations", JSON.stringify(ans));
-        // window.location.reload();
+        window.location.reload();
     }
     function annotationTextBox () {
         return (
