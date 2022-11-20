@@ -27,7 +27,7 @@ function App() {
               <Route path='/crops' element={<Crops />} />
               <Route path='/crops-mango' element={<CropsMango />} />
               <Route path='/crops-walnut' element={<CropsWalnut />} />
-              <Route path='/macroEconomic' element={<MacroEconomic />} />
+              <Route path='/' element={<MacroEconomic />} />
             </Routes>
           </div>
         </HashRouter>

@@ -2,10 +2,7 @@ import React from "react";
 import Chart1 from "./chart1";
 import saudiCsvFile from '../../data/saudi-imports.csv';
 import egyptCsvFile from '../../data/egypt-imports.csv';
-import Papa from 'papaparse';
-import Form from 'react-bootstrap/Form';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import Papa from 'papaparse'
 
 export default function Agricultural() {
 
@@ -25,13 +22,13 @@ export default function Agricultural() {
     }
 
     const handleYearChange = e => {
-        setYear(e);
-        filterGraphData(crop, e)
+        setYear(e.target.value);
+        filterGraphData(crop, e.target.value)
     }
 
     const handleCountryChange = e => {
-        setCountry(e)
-        if(e === 'Saudi Arabia') {
+        setCountry(e.target.value)
+        if(e.target.value === 'Saudi Arabia') {
             currentData.current = saudiData.current;
         } else {
             currentData.current = egyptData.current;
@@ -98,59 +95,33 @@ export default function Agricultural() {
 
     return <div>
         <div className="agricultural-topbar">
-            {/* <select id="year" value={year} onChange={handleYearChange}>
+            <label for="year">Year: </label>
+            <select id="year" value={year} onChange={handleYearChange}>
                 {
                     Array.from({ length: (2020 - 1986 + 1) }, (v, k) => `${2020 - k}`)
                         .map(year => <option value={year}>{year}</option>)
                 }
-            </select> */}
-
-            {/* <select id="country" value={country} onChange={handleCountryChange}>
+            </select>
+            &nbsp;&nbsp;
+            <label for="country">Country: </label>
+            <select id="country" value={country} onChange={handleCountryChange}>
                 <option value="Saudi Arabia">Saudi Arabia</option>
                 <option value="Egypt">Egypt</option>
-            </select> */}
-
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between',alignItems:'center', flexWrap:'wrap', padding:'10px'}}>
-
-            <DropdownButton  
-                        title={year}
-                        id="dropdown-menu-align-right"
-                        variant="secondary"
-                        onSelect={handleYearChange}
-                    >
-                {
-                    Array.from({ length: (2020 - 1986 + 1) }, (v, k) => `${2020 - k}`)
-                        .map(year => 
-                            <Dropdown.Item eventKey = {year}>{year}</Dropdown.Item>)
-                }
-            </DropdownButton>
-
-            <DropdownButton  
-                        title={country}
-                        id="dropdown-menu-align-right"
-                        variant="secondary"
-                        onSelect={handleCountryChange}
-                    >
-                            <Dropdown.Item eventKey = 'Saudi Arabia'>Saudi Arabias</Dropdown.Item>
-                            <Dropdown.Item eventKey = 'Egypt'>Egypt</Dropdown.Item>
-            </DropdownButton>
-            </div>
-
-            <center>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="wheat" type="radio" name="crop" checked={isChecked('wheat')}></input>
-            <label for="wheet">Wheat</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="rice" type="radio" name="crop" checked={isChecked('rice')}></input>
-            <label for="rice">Rice</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="corn" type="radio" name="crop" checked={isChecked('corn')}></input>
-            <label for="corn">Corn</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="mangos" type="radio" name="crop" checked={isChecked('mangos')}></input>
-            <label for="mangos">Mangos</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="walnuts" type="radio" name="crop" checked={isChecked('walnuts')}></input>
-            <label for="walnuts">Walnuts</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="bananas" type="radio" name="crop" checked={isChecked('bananas')}></input>
-            <label for="bananas">Bananas</label>
-            </center>
+            </select>
             <br/>
+            <br/>
+            <input onChange={handleCropChange} id="wheat" type="radio" name="crop" checked={isChecked('wheat')}></input>
+            <label for="wheet">Wheat</label>
+            <input onChange={handleCropChange} id="rice" type="radio" name="crop" checked={isChecked('rice')}></input>
+            <label for="rice">Rice</label>
+            <input onChange={handleCropChange} id="corn" type="radio" name="crop" checked={isChecked('corn')}></input>
+            <label for="corn">Corn</label>
+            <input onChange={handleCropChange} id="mangos" type="radio" name="crop" checked={isChecked('mangos')}></input>
+            <label for="mangos">Mangos</label>
+            <input onChange={handleCropChange} id="walnuts" type="radio" name="crop" checked={isChecked('walnuts')}></input>
+            <label for="walnuts">Walnuts</label>
+            <input onChange={handleCropChange} id="bananas" type="radio" name="crop" checked={isChecked('bananas')}></input>
+            <label for="bananas">Bananas</label>
         </div>
         <Chart1 data={graphData} />
     </div>
