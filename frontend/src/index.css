@@ -24,7 +24,7 @@ code {
   grid-area: header;
   border-bottom: 2px solid gainsboro;
   display: grid;
-  grid-template-columns: 90px auto 90px;
+  grid-template-columns: 280px auto 177px;
 }
 
 .my-navbar {
@@ -48,7 +48,7 @@ code {
 .page-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 
 .my-container {
@@ -66,12 +66,14 @@ code {
   grid-area: footer;
   border-top: 2px solid gainsboro;
   text-align: center;
+  font-size: 12px;
+  padding-top: 5px;
 }
 
 .app-grid {
   display: grid;
   grid-template-columns: 280px auto;
-  grid-template-rows: 60px auto 90px;
+  grid-template-rows: 60px auto 40px;
   min-height: 100vh;
   grid-template-areas:
     "header header"
