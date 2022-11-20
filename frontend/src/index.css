@@ -41,9 +41,8 @@ code {
 }
 
 .country-flag {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: x-small;
+  width: max-content;
 }
 
 .page-header {

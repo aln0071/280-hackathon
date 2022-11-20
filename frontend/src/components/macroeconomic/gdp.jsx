@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import { Chart } from "react-google-charts";
 import csvFile from '../../data/gdp_all.csv';
 import * as d3 from 'd3';
-import { get } from "mongoose";
 
 
 export default function GDP(props) {
