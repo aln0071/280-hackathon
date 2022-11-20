@@ -47,7 +47,9 @@ export default function FDI_IN(props) {
     }, [props]);
 
     
-
+    const options = {
+        series: [{ color: "#008b8b" }],
+      };
     
 
   return (
@@ -56,8 +58,9 @@ export default function FDI_IN(props) {
         <Chart
             chartType="Line"
             width="100%"
-            height="400px"
+            height="200px"
             data={parsedCsvData}
+            options={options}
         />
       </>
 

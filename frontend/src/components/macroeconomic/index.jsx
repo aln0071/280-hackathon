@@ -6,6 +6,7 @@ import FDI_IN from "./fdi-in";
 import FDI_OUT from "./fdi-out";
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import Typography from '@mui/material/Typography';
 
 
 export default function MacroEconomic() {
@@ -32,13 +33,14 @@ export default function MacroEconomic() {
 
 
     return(
-        <div>
+        <div style={{padding:'20px', paddingLeft:'50px'}}>
             <h3><center>Macroeconomic charts for {country}</center></h3><br />
 
-             <div style={{display:'flex', flexDirection:'row',alignItems:'center', flexWrap:'wrap', padding:'5px'}}>
+             <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between',alignItems:'center', flexWrap:'wrap', padding:'10px'}}>
                     <DropdownButton  
                         title={country}
                         id="dropdown-menu-align-right"
+                        variant="secondary"
                         onSelect={handleSelect}
                     >
                             <Dropdown.Item eventKey = 'United States'>United States</Dropdown.Item>
@@ -49,6 +51,9 @@ export default function MacroEconomic() {
 
 
                     <Box sx={{ width: 300 }}>
+                    <Typography id="non-linear-slider" gutterBottom> 
+                        Year
+                    </Typography>
                     <Slider
                         getAriaLabel={() => 'Year range'}
                         defaultValue={[1960,2021]}
@@ -58,6 +63,7 @@ export default function MacroEconomic() {
                         min={1960}
                         max={2021}
                         getAriaValueText={()=> 'Year'}
+                        color='secondary'
                     />
                     </Box>
 

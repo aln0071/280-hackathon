@@ -56,7 +56,7 @@ export default function FDI_OUT(props) {
         <Chart
             chartType="Line"
             width="100%"
-            height="400px"
+            height="200px"
             data={parsedCsvData}
         />
       </>

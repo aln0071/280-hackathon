@@ -39,6 +39,9 @@ export default function GDP(props) {
         fetchCsv(props.country, props.start, props.end);
     }, [props]);
 
+    const options = {
+        series: [{ color: "#D9544C" }],
+      };
     
   return (
       <>
@@ -46,8 +49,9 @@ export default function GDP(props) {
         <Chart
             chartType="Line"
             width="100%"
-            height="400px"
+            height="200px"
             data={parsedCsvData}
+            options = {options}
             
         />
       </>
