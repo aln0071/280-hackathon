@@ -1,14 +1,18 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import logo from '../../logo.svg';
 import Form from 'react-bootstrap/Form';
 
 export default function Header() {    
-    const [persona,setPersona]=useState(false)
+    console.log("persona",localStorage.getItem('foodResearcher'))
+    const [persona,setPersona]=useState(localStorage.getItem('foodResearcher'))
     const handleChange =(e)=>{
         console.log(e.target.checked)
         setPersona(e.target.checked)
         localStorage.setItem("foodResearcher",e.target.checked)
+        window.location.reload();
     }
+    useEffect(() => {
+    }, [persona])
 
     return <div className="header">
         <img alt="logo" src={logo} width={80} />
@@ -20,9 +24,11 @@ export default function Header() {
             type="switch"
             id="custom-switch"
             onChange={handleChange}
+            defaultChecked={persona==='true'? true: false}
         />
         </Form>
-        Persona : {persona?"Food Security Researcher": "Govternment Representative"}
+        Persona : 
+        {persona && persona==='true'?"Food Security Researcher": "Govternment Representative"}
 
 
         </div>

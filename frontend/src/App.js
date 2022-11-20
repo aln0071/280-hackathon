@@ -15,7 +15,10 @@ import PhilippinesMango from './components/speciality-crops/philippines-mango';
 function App() {
 
   useEffect(() => {
-    localStorage.setItem("foodResearcher",false)
+    if(localStorage.getItem("foodResearcher")===null){
+      localStorage.setItem("foodResearcher",false)
+
+    }
 }, [])
 
   return (
