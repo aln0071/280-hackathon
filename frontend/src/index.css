@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.navbar {
+.my-navbar {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -27,16 +27,16 @@ code {
   grid-template-columns: 90px auto 90px;
 }
 
-.navbar {
+.my-navbar {
   grid-area: navbar;
 }
 
-.navbar details {
+.my-navbar details {
   padding-bottom: 10px;
   cursor: pointer;
 }
 
-.navbar details[open] {
+.my-navbar details[open] {
   padding: 0px;
 }
 
@@ -47,10 +47,12 @@ code {
 }
 
 .page-header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container {
+.my-container {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -95,6 +97,6 @@ code {
   align-items: center;
 }
 
-.navbar span, .navbar li {
+.my-navbar span, .my-navbar li {
   cursor: pointer;
 }
