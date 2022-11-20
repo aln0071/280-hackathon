@@ -101,9 +101,8 @@ export default function GDP(props) {
                 }
             )
         }
-        setAnnotations(ans)
-        localStorage.setItem("gdpAnnotations", JSON.stringify(ans));
-        window.location.reload();
+        setAnnotations([...ans])
+        localStorage.setItem("fdiOutAnnotations", JSON.stringify(ans));
         setSelectedYear(null);
         console.log("state", annotations)
     }
@@ -112,11 +111,9 @@ export default function GDP(props) {
             <>
            <form onSubmit={annotate} style={{alignItems:'center', justifyContent:'center'}} >
                 Add Annotation to Year {selectedYear} : 
-                <br/>
-                <br/>
+               
                 <input type='text' onChange = {(e)=> {setAnnotationText(e.target.value)}}/>
-                <br/>
-                <br/>
+               
                 <button type='submit'> Save</button>
                 </form>
             </>)
@@ -146,7 +143,6 @@ export default function GDP(props) {
     
   return (
       <>
-       <div style = {{display:'flex', flexDirection:'row',justifyContent:'space-between',alignItems:'center', padding:'10px'}}>
         <Chart
             chartType="LineChart"
             width="100%"
@@ -162,7 +158,6 @@ export default function GDP(props) {
         (selectedYear!=null && annotationTextBox())
         :"Only food researchers can add annotations."}
         </p>
-        </div>
       </>
 
   );

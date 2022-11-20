@@ -107,6 +107,7 @@ export default function MacroEconomic() {
                 <FDI_IN country={country} start={start} end={end} />
             }
             <br />
+            <br />
             {visibleItems.includes(validItems[2]) &&
                 <FDI_OUT country={country} start={start} end={end} />
             }
