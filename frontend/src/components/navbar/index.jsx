@@ -88,7 +88,7 @@ export default function Navbar() {
                                     if(typeof subsection === 'string') {
                                         return <li key={`${section}${subsection}`} draggable>{subsection}</li>
                                     } else {
-                                        return <li key={`${section}${subsection}`} onClick={() => navigate(subsection.navigateTo)}>{subsection.label}</li>
+                                        return <li key={`${section}${subsection.label}`} onClick={() => navigate(subsection.navigateTo)}>{subsection.label}</li>
                                     }
                                 }
                                 )

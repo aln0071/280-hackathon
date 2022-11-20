@@ -99,3 +99,7 @@ code {
 .my-navbar span, .my-navbar li {
   cursor: pointer;
 }
+
+.agri-chart2 {
+  padding-top: 20px;
+}
