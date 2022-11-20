@@ -2,6 +2,7 @@ import './App.css';
 import Footer from './components/footer';
 import Header from './components/header';
 import Navbar from './components/navbar';
+import { TimeSeries } from './components/macroeconomic/time-series';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Header />
         <Navbar />
         <div className='contents'>
+          <TimeSeries />
         </div>
         <Footer />
       </div>
