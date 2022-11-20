@@ -70,6 +70,7 @@ export default function MacroEconomic() {
       </div>
             <GDP country = {country} start={start} end = {end} />
             <br />
+            <br />
             <FDI_IN country = {country} start={start} end = {end} />
             <br />
             <FDI_OUT country = {country} start={start} end = {end} />

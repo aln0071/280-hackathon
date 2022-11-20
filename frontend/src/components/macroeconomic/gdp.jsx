@@ -10,6 +10,7 @@ export default function GDP(props) {
     const [selectedYear, setSelectedYear] = useState();
     const [selectedIndex, setSelectedIndex] = useState();
     const [annotationText, setAnnotationText] = useState();
+    const [fr, setfr] = useState(localStorage.getItem("foodResearcher"));
     const [annotations, setAnnotations] = useState(
         () => {
             const ans = localStorage.getItem('gdpAnnotations')
@@ -82,7 +83,7 @@ export default function GDP(props) {
     
         fetchCsv(props.country, props.start, props.end);
 
-    }, [props]);
+    }, [props,fr]);
 
 
     function annotate (e){
@@ -108,18 +109,17 @@ export default function GDP(props) {
     }
     function annotationTextBox () {
         return (
-
             <>
            <form onSubmit={annotate}>
-                Add Annotation to Year: {selectedYear}
+                Add Annotation to Year {selectedYear} : 
                 <input type='text' onChange = {(e)=> {setAnnotationText(e.target.value)}}/>
-                <button type='submit'> -></button>
+                <button type='submit'> Save</button>
                 </form>
-            </>
-        )
+            </>)
     }
 
     async function getPointToYear(point){
+        setfr(localStorage.getItem("foodResearcher"))
         const year_index = point + 1        
         const year= parsedCsvData[year_index][0]
         console.log(year_index, year)
@@ -154,7 +154,12 @@ export default function GDP(props) {
             chartEvents ={chartEvents}
             
         />
-        {selectedYear!=null && annotationTextBox()}
+        <br></br>
+        <p class="text-secondary">
+        {(fr==="true")?
+        (selectedYear!=null && annotationTextBox())
+        :"Only food researchers can add annotations."}
+        </p>
       </>
 
   );
