@@ -6,6 +6,7 @@ import Papa from 'papaparse';
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Chart2 from "./chart2";
 
 export default function Agricultural() {
 
@@ -31,7 +32,7 @@ export default function Agricultural() {
 
     const handleCountryChange = e => {
         setCountry(e)
-        if(e === 'Saudi Arabia') {
+        if (e === 'Saudi Arabia') {
             currentData.current = saudiData.current;
         } else {
             currentData.current = egyptData.current;
@@ -41,7 +42,7 @@ export default function Agricultural() {
 
     const isChecked = id => crop === id;
 
-    const [graphData, setGraphData] = React.useState([]);
+    const [graphData, setGraphData] = React.useState(["From", "To", "Weight in Tonnes"]);
 
     const filterGraphData = (cropName, year) => {
         const cropNameMap = {
@@ -52,13 +53,14 @@ export default function Agricultural() {
             walnuts: 'Walnuts, shelled',
             bananas: 'Bananas'
         }
-        if(currentData.current !== null) {
+        if (currentData.current !== null) {
             const newGraphData = currentData.current
                 .filter(row => (
                     row.Unit === 'tonnes' &&
                     row['Year Code'] === year &&
                     row.Item === cropNameMap[cropName] &&
-                    !isNaN(parseInt(row.Value))
+                    !isNaN(parseInt(row.Value)) &&
+                    parseInt(row.Value) > 0
                 ))
                 .map(row => ([
                     row['Reporter Countries'],
@@ -81,7 +83,7 @@ export default function Agricultural() {
         const results = Papa.parse(csv, { header: true })
         const rows = results.data;
         if (rows.length > 0) {
-            if(saudi) {
+            if (saudi) {
                 saudiData.current = rows;
                 currentData.current = rows;
                 filterGraphData(crop, year)
@@ -96,62 +98,65 @@ export default function Agricultural() {
         loadData(egyptCsvFile, false)
     }, [])
 
-    return <div>
-        <div className="agricultural-topbar">
-            {/* <select id="year" value={year} onChange={handleYearChange}>
+    return (
+        <div>
+            <div className="agricultural-topbar">
+                {/* <select id="year" value={year} onChange={handleYearChange}>
                 {
                     Array.from({ length: (2020 - 1986 + 1) }, (v, k) => `${2020 - k}`)
                         .map(year => <option value={year}>{year}</option>)
                 }
             </select> */}
 
-            {/* <select id="country" value={country} onChange={handleCountryChange}>
+                {/* <select id="country" value={country} onChange={handleCountryChange}>
                 <option value="Saudi Arabia">Saudi Arabia</option>
                 <option value="Egypt">Egypt</option>
             </select> */}
 
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between',alignItems:'center', flexWrap:'wrap', padding:'10px'}}>
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', padding: '10px' }}>
 
-            <DropdownButton  
+                    <DropdownButton
                         title={year}
                         id="dropdown-menu-align-right"
                         variant="secondary"
                         onSelect={handleYearChange}
                     >
-                {
-                    Array.from({ length: (2020 - 1986 + 1) }, (v, k) => `${2020 - k}`)
-                        .map(year => 
-                            <Dropdown.Item eventKey = {year}>{year}</Dropdown.Item>)
-                }
-            </DropdownButton>
+                        {
+                            Array.from({ length: (2020 - 1986 + 1) }, (v, k) => `${2020 - k}`)
+                                .map(year =>
+                                    <Dropdown.Item eventKey={year} key={`agriyear${year}`}>{year}</Dropdown.Item>)
+                        }
+                    </DropdownButton>
 
-            <DropdownButton  
+                    <DropdownButton
                         title={country}
                         id="dropdown-menu-align-right"
                         variant="secondary"
                         onSelect={handleCountryChange}
                     >
-                            <Dropdown.Item eventKey = 'Saudi Arabia'>Saudi Arabias</Dropdown.Item>
-                            <Dropdown.Item eventKey = 'Egypt'>Egypt</Dropdown.Item>
-            </DropdownButton>
-            </div>
+                        <Dropdown.Item eventKey='Saudi Arabia'>Saudi Arabias</Dropdown.Item>
+                        <Dropdown.Item eventKey='Egypt'>Egypt</Dropdown.Item>
+                    </DropdownButton>
+                </div>
 
-            <center>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="wheat" type="radio" name="crop" checked={isChecked('wheat')}></input>
-            <label for="wheet">Wheat</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="rice" type="radio" name="crop" checked={isChecked('rice')}></input>
-            <label for="rice">Rice</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="corn" type="radio" name="crop" checked={isChecked('corn')}></input>
-            <label for="corn">Corn</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="mangos" type="radio" name="crop" checked={isChecked('mangos')}></input>
-            <label for="mangos">Mangos</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="walnuts" type="radio" name="crop" checked={isChecked('walnuts')}></input>
-            <label for="walnuts">Walnuts</label>
-            <input onChange={handleCropChange} style={{marginLeft:"1rem"}} id="bananas" type="radio" name="crop" checked={isChecked('bananas')}></input>
-            <label for="bananas">Bananas</label>
-            </center>
-            <br/>
+                <center>
+                    <input onChange={handleCropChange} style={{ marginLeft: "1rem" }} id="wheat" type="radio" name="crop" checked={isChecked('wheat')}></input>
+                    <label htmlFor="wheet">Wheat</label>
+                    <input onChange={handleCropChange} style={{ marginLeft: "1rem" }} id="rice" type="radio" name="crop" checked={isChecked('rice')}></input>
+                    <label htmlFor="rice">Rice</label>
+                    <input onChange={handleCropChange} style={{ marginLeft: "1rem" }} id="corn" type="radio" name="crop" checked={isChecked('corn')}></input>
+                    <label htmlFor="corn">Corn</label>
+                    <input onChange={handleCropChange} style={{ marginLeft: "1rem" }} id="mangos" type="radio" name="crop" checked={isChecked('mangos')}></input>
+                    <label htmlFor="mangos">Mangos</label>
+                    <input onChange={handleCropChange} style={{ marginLeft: "1rem" }} id="walnuts" type="radio" name="crop" checked={isChecked('walnuts')}></input>
+                    <label htmlFor="walnuts">Walnuts</label>
+                    <input onChange={handleCropChange} style={{ marginLeft: "1rem" }} id="bananas" type="radio" name="crop" checked={isChecked('bananas')}></input>
+                    <label htmlFor="bananas">Bananas</label>
+                </center>
+                <br />
+            </div>
+            <Chart1 data={graphData} />
+            <Chart2 data={graphData} crop={crop} year={year}/>
         </div>
-        <Chart1 data={graphData} />
-    </div>
+    )
 }
