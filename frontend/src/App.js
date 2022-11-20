@@ -11,7 +11,7 @@ import PhilippinesMango from './components/speciality-crops/philippines-mango';
 
 function App() {
   return (
-    <div className="container">
+    <div className="my-container">
       <div className='app-grid'>
         <Header />
         <HashRouter>
@@ -21,7 +21,7 @@ function App() {
               <Route path='/philippines-mango' element={<PhilippinesMango />} />
               <Route path='/walnuts-iran' element={<WalnutsIran />} />
               <Route path='/agricultural' element={<Agricultural />} />
-              <Route path='/macroeconomic' element={<MacroEconomic />} />
+              <Route path='/' element={<MacroEconomic />} />
             </Routes>
           </div>
         </HashRouter>
