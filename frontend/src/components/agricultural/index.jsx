@@ -19,7 +19,7 @@ export default function Agricultural() {
 
     const [year, setYear] = React.useState('2020');
 
-    const [country, setCountry] = React.useState('Soudi Arabia');
+    const [country, setCountry] = React.useState('Saudi Arabia');
 
     const handleCropChange = e => {
         setCrop(e.target.id);
@@ -135,7 +135,7 @@ export default function Agricultural() {
                         variant="secondary"
                         onSelect={handleCountryChange}
                     >
-                        <Dropdown.Item eventKey='Saudi Arabia'>Saudi Arabias</Dropdown.Item>
+                        <Dropdown.Item eventKey='Saudi Arabia'>Saudi Arabia</Dropdown.Item>
                         <Dropdown.Item eventKey='Egypt'>Egypt</Dropdown.Item>
                     </DropdownButton>
                 </div>

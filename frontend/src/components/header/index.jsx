@@ -28,7 +28,7 @@ export default function Header() {
         />
         </Form>
         Persona : 
-        {persona && persona==='true'?"Food Security Researcher": "Govternment Representative"}
+        {persona && persona==='true'?"Food Security Researcher": "Government Representative"}
 
 
         </div>
