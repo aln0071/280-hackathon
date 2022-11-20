@@ -6,7 +6,7 @@ import * as d3 from 'd3';
 
 export default function GDP(props) {
     const [parsedCsvData, setParsedCsvData] = useState([]);
-    const columns = ['Year', 'GDP']
+    const columns = ['Year', 'GDP Growth']
 
     const fetchCsv = (country, start, end) => {
         const response = d3.csv(csvFile).then(response => {  

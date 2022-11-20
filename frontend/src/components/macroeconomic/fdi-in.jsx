@@ -11,7 +11,7 @@ import * as d3 from 'd3';
 
 export default function FDI_IN(props) {
     const [parsedCsvData, setParsedCsvData] = useState([]);
-    const columns = ['Year', 'FDI']
+    const columns = ['Year', 'FDI Inflow']
 
         
 

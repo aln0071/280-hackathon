@@ -33,14 +33,14 @@ export default function MacroEconomic() {
 
     return(
         <div>
-            <h3><center>GDP chart for {country}</center></h3><br />
+            <h3><center>Macroeconomic charts for {country}</center></h3><br />
 
-             <div style={{display:'flex', alignItems:'center'}}>
-                <DropdownButton  
+             <div style={{display:'flex', flexDirection:'row',alignItems:'center', flexWrap:'wrap', padding:'5px'}}>
+                    <DropdownButton  
                         title={country}
                         id="dropdown-menu-align-right"
                         onSelect={handleSelect}
-                        >
+                    >
                             <Dropdown.Item eventKey = 'United States'>United States</Dropdown.Item>
                             <Dropdown.Item eventKey = 'China'>China</Dropdown.Item>
                             <Dropdown.Item eventKey = 'India'>India</Dropdown.Item>

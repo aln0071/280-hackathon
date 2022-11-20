@@ -62,7 +62,7 @@ export default function Navbar() {
         setOpenSections(newOpenSections);
     }
 
-    return <div className="navbar">
+    return <div className="my-navbar">
         {
             Object.keys(sections).map((section, index) =>
                 <div key={section}>
