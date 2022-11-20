@@ -141,7 +141,7 @@ export default function GDP(props) {
       };
     
   return (
-      <>{JSON.stringify(annotations)}
+      <>
        
         <Chart
             chartType="LineChart"
