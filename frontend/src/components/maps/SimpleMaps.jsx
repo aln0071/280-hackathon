@@ -33,7 +33,6 @@ class SimpleMaps extends Component {
             }
         </GoogleMap>
       </LoadScript>
-      <br></br>
         <Card>
         <Card.Header as="h5">{this.props.place}</Card.Header>
         <Card.Body>

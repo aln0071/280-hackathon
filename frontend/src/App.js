@@ -8,11 +8,16 @@ import Agricultural from './components/agricultural';
 import CropsMango from './components/maps/indexMango';
 import CropsWalnut from './components/maps/indexWalnut';
 import Crops from './components/maps';
-import React from 'react';
+import React, { useEffect } from 'react';
 import WalnutsIran from './components/speciality-crops/walnuts-iran';
 import PhilippinesMango from './components/speciality-crops/philippines-mango';
 
 function App() {
+
+  useEffect(() => {
+    localStorage.setItem("foodResearcher",false)
+}, [])
+
   return (
     <div className="my-container">
       <div className='app-grid'>
