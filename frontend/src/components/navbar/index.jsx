@@ -4,20 +4,20 @@ import arrowRight from '../../icons/arrow-right.svg';
 import arrowDown from '../../icons/arrow-down.svg';
 
 const sections = {
-    "Macroeconomic (USD)": {
+    "Macroeconomic (%)": {
         navigateTo: '',
         subsections: [
             {
-                label: "GDP (USD)",
-                dataTransfer: "GDP (USD)"
+                label: "GDP (%)",
+                dataTransfer: "GDP (%)"
             },
             {
-                label: "FDI Inflows (USD)",
-                dataTransfer: "FDI Inflows (USD)"
+                label: "FDI Inflows (%)",
+                dataTransfer: "FDI Inflows (%)"
             },
             {
-                label: "FDI Outflows (USD)",
-                dataTransfer: "FDI Outflows (USD)"
+                label: "FDI Outflows (%)",
+                dataTransfer: "FDI Outflows (%)"
             },
         ]
     },
