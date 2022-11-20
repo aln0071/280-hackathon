@@ -24,7 +24,7 @@ code {
   grid-area: header;
   border-bottom: 2px solid gainsboro;
   display: grid;
-  grid-template-columns: 280px auto 177px;
+  grid-template-columns: 280px auto 222px;
 }
 
 .my-navbar {
@@ -48,12 +48,11 @@ code {
 .page-header {
   display: flex;
   align-items: center;
-  justify-content: left;    
-  padding-left: 10rem;
+  justify-content: center;
 }
 
 .my-container {
-  max-width: 80%;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -61,7 +60,6 @@ code {
 .contents {
   grid-area: contents;
   border-left: 2px solid gainsboro;
-  height:75rem
 }
 
 .footer {
