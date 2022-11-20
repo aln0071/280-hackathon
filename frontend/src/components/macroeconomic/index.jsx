@@ -86,6 +86,7 @@ export default function MacroEconomic() {
             <div className="drop-zone" onDrop={handleDrop} onDragOver={handleDragOver}>
                 Drag and drop items here
             </div>
+
             <div className="visible-items-list">
                 {
                     visibleItems.map(item => <span className="visible-item" onClick={() => {
@@ -94,6 +95,9 @@ export default function MacroEconomic() {
                     }}>{item}</span>)
                 }
             </div>
+            <center> <Typography style={{padding:'10px', alignSelf:'center', color:'darkblue', fontFamily:'Arial, Helvetica, sans-serif'}}>
+                Click on points to add Annotations
+            </Typography> </center>
             {visibleItems.includes(validItems[0]) &&
                 <GDP country={country} start={start} end={end} />
             }
