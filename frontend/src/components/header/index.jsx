@@ -16,15 +16,18 @@ export default function Header() {
 
     return <div className="header">
         <img alt="logo" src={logo} width={80} />
-        <h3 className="page-header">Food Security Time Series Dashboard</h3>
+        <h3 className="page-header">Food Security Dashboard</h3>
         <div className="country-flag">
         <br></br>
         <Form>
         <Form.Check 
+            className="lg"
             type="switch"
             id="custom-switch"
             onChange={handleChange}
             defaultChecked={persona==='true'? true: false}
+            size='lg'
+            style={{}}
         />
         </Form>
         Persona : 

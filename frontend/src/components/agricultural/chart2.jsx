@@ -18,9 +18,10 @@ export default function Chart2({ data, crop, year }) {
             transformedData[row[1]] = transformedData[row[1]] ? transformedData[row[1]] + row[2] : row[2];
         })
 
-    return (
-        <div className="agri-chart2">
-            <h4>{`${cropNameMap[crop]} Imports Quantity (tonnes), ${year}`}</h4>
+    return ( data &&
+        <>
+        <div className="agri-chart2" style={{width:'60%', height:'300px'}}>
+            <center><h4>{`${cropNameMap[crop]} Imports Quantity (tonnes), ${year}`}</h4></center>
             <ReactApexChart
                 type="pie"
                 options={{
@@ -29,5 +30,6 @@ export default function Chart2({ data, crop, year }) {
                 series={Object.values(transformedData)}
             />
         </div>
+        </>
     )
 }

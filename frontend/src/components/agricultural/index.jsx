@@ -100,19 +100,9 @@ export default function Agricultural() {
     }, [])
 
     return (
-        <div>
-            <div className="agricultural-topbar">
-                {/* <select id="year" value={year} onChange={handleYearChange}>
-                {
-                    Array.from({ length: (2020 - 1986 + 1) }, (v, k) => `${2020 - k}`)
-                        .map(year => <option value={year}>{year}</option>)
-                }
-            </select> */}
-
-                {/* <select id="country" value={country} onChange={handleCountryChange}>
-                <option value="Saudi Arabia">Saudi Arabia</option>
-                <option value="Egypt">Egypt</option>
-            </select> */}
+        <div style={{paddingLeft:'20px'}}>
+            <div className="agricultural-topbar" >
+              
 
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', padding: '10px' }}>
 
@@ -156,10 +146,13 @@ export default function Agricultural() {
                 </center>
                 <br />
             </div>
+            <center>
             <ErrorBoundary>
-                <Chart1 data={graphData} />
+                <Chart1 data={graphData}  crop={crop} year={year} />
             </ErrorBoundary>
+            <br></br>
             <Chart2 data={graphData} crop={crop} year={year}/>
+            </center>
         </div>
     )
 }

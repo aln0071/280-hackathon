@@ -151,8 +151,8 @@ export default function FDI_OUT(props) {
     
 
   return (
+    parsedCsvData &&
       <>
-     
         <Chart
             chartType="LineChart"
             width="100%"

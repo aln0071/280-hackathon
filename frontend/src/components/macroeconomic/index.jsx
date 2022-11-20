@@ -13,8 +13,8 @@ const validItems = ['GDP (USD)', 'FDI Inflows (USD)', 'FDI Outflows (USD)']
 
 export default function MacroEconomic() {
     const [country, setCountry] = useState('United States')
-    const [start, setStart] = useState(parseInt('1990'));
-    const [end, setEnd] = useState(parseInt('2020'));
+    const [start, setStart] = useState(parseInt('1960'));
+    const [end, setEnd] = useState(parseInt('2021'));
     const [range, setRange] = useState([1960, 2021])
 
     const [visibleItems, setVisibleItems] = React.useState([]);

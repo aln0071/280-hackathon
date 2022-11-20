@@ -5,7 +5,7 @@ import {Card} from 'react-bootstrap';
 
 const mapContainerStyle = {
     height: "300px",
-    width: "600px"
+    width: "80%"
   }
 
 
@@ -15,6 +15,7 @@ class SimpleMaps extends Component {
   render() {
     return (
     <div style={{marginLeft:"4rem"}}>
+      <center>
       <LoadScript
         googleMapsApiKey="AIzaSyBbeRcs-pasAaXrl5Ph3K-I4Zcd2SgCRKA"
       >
@@ -33,7 +34,7 @@ class SimpleMaps extends Component {
             }
         </GoogleMap>
       </LoadScript>
-        <Card>
+        <Card style={{width:"80%",textAlign:"left",marginTop:"1rem"}}>
         <Card.Header as="h5">{this.props.place}</Card.Header>
         <Card.Body>
             <Card.Text>
@@ -41,6 +42,7 @@ class SimpleMaps extends Component {
             </Card.Text>
         </Card.Body>
         </Card>
+        </center>
       </div>
     )
   }

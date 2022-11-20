@@ -142,6 +142,7 @@ export default function GDP(props) {
       };
     
   return (
+    parsedCsvData &&
       <>
         <Chart
             chartType="LineChart"
@@ -159,6 +160,5 @@ export default function GDP(props) {
         :"Only food researchers can add annotations."}
         </p>
       </>
-
   );
 }
