@@ -154,7 +154,7 @@ export default function GDP(props) {
             
         />
         <br></br>
-        <p class="text-secondary">
+        <p className="text-secondary">
         {(fr==="true")?
         (selectedYear!=null && annotationTextBox())
         :"Only food researchers can add annotations."}

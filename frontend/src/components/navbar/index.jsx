@@ -14,11 +14,7 @@ const sections = {
     },
     "Agricultural": {
         navigateTo: 'agricultural',
-        subsections: [
-            "GDP (USD)",
-            "FDI Inflows (USD)",
-            "FDI Outflows (USD)"
-        ]
+        subsections: []
     },
     // "Debt Services": {
     //     navigateTo: 'debt',
