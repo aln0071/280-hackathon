@@ -100,7 +100,7 @@ export default function Agricultural() {
     }, [])
 
     return (
-        <div style={{paddingLeft:'20px'}}>
+        <div className="agri-chart-container">
             <div className="agricultural-topbar" >
               
 
@@ -146,13 +146,11 @@ export default function Agricultural() {
                 </center>
                 <br />
             </div>
-            <center>
             <ErrorBoundary>
                 <Chart1 data={graphData}  crop={crop} year={year} />
             </ErrorBoundary>
             <br></br>
             <Chart2 data={graphData} crop={crop} year={year}/>
-            </center>
         </div>
     )
 }

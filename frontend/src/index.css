@@ -131,3 +131,13 @@ code {
 .visible-items-list {
   padding: 5px 0px;
 }
+
+.agri-chart-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pie-chart-header {
+  text-align: center;
+  padding-top: 20px;
+}
