@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-google-maps/api": "^2.7.0",
+    "google-maps-react": "git+https://github.com/fullstackreact/google-maps-react.git",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.14",
@@ -20,6 +22,7 @@
     "react-bootstrap-slider": "^3.0.0",
     "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
+    "react-google-maps": "^9.4.5",
     "react-google-charts": "^4.0.0",
     "react-router": "^6.4.3",
     "react-router-dom": "^6.4.3",
