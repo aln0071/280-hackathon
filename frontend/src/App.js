@@ -4,6 +4,7 @@ import Header from './components/header';
 import Navbar from './components/navbar';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Agricultural from './components/agricultural';
+import Crops from './components/maps';
 import React from 'react';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <div className='contents'>
             <Routes>
               <Route path='/agricultural' element={<Agricultural />} />
+              <Route path='/crops' element={<Crops />} />
             </Routes>
           </div>
         </HashRouter>
