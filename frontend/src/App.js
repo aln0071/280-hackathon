@@ -5,6 +5,7 @@ import Navbar from './components/navbar';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Agricultural from './components/agricultural';
 import React from 'react';
+import WalnutsIran from './components/speciality-crops/walnuts-iran';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Navbar />
           <div className='contents'>
             <Routes>
+              <Route path='/walnuts-iran' element={<WalnutsIran />} />
               <Route path='/agricultural' element={<Agricultural />} />
             </Routes>
           </div>
