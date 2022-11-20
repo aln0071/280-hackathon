@@ -2,11 +2,18 @@ import React, {useState, useEffect} from "react";
 import { Chart } from "react-google-charts";
 import csvFile from '../../data/gdp_all.csv';
 import * as d3 from 'd3';
+import { get } from "mongoose";
 
 
 export default function GDP(props) {
     const [parsedCsvData, setParsedCsvData] = useState([]);
-    const columns = ['Year', 'GDP Growth']
+    const columns = ['Year', 'GDP Growth',{ type: 'string', role:'annotation' }]
+    const [selectedYear, setSelectedYear] = useState();
+    const [selectedIndex, setSelectedIndex] = useState();
+    const [annotationText, setAnnotationText] = useState();
+    const [annotations, setAnnotations] = useState([]);
+
+
 
     const fetchCsv = (country, start, end) => {
         const response = d3.csv(csvFile).then(response => {  
@@ -14,19 +21,28 @@ export default function GDP(props) {
             { 
                 if( d["Country Name"] === country)
                 { 
-                    console.log(d);
-                    let dataSource = [];
-                    dataSource.push(columns);
+                    let rows = [];
                     for (const [key, value] of Object.entries(d)){
                         if (parseInt(key)>=start && parseInt(key)<=end){
                             let row = [];
                             row.push(key);
                             row.push(parseFloat(value))
-                            dataSource.push(row);
+                            let index = annotations.findIndex((item => item.year === key));
+                            if(index>=0){
+                                row.push(annotations[index].annotation)
+                            }
+                            else
+                            {
+                                row.push('')
+                            }
+
+                            rows.push(row);
                         }
-                    };  
-                    dataSource.slice(0, dataSource.length-5)
-                    setParsedCsvData(dataSource)
+                    }
+                    rows.slice(0, rows.length-5)
+                    let datasource = [columns, ...rows]
+                    setParsedCsvData(datasource)
+                    console.log(datasource)
                     return d;
                 } 
             })
@@ -34,26 +50,114 @@ export default function GDP(props) {
         .catch(err => console.log(err))
     }
 
+    const chartEvents = [
+        {
+          callback: ({ chartWrapper, google }) => {
+            const chart = chartWrapper.getChart();
+            google.visualization.events.addListener(
+                chart,
+                "select",
+                e => {
+                    // const chartObject = chart.getChart();
+                    if (chart.getSelection()[0]){
+
+                        getPointToYear(chart.getSelection()[0].row);
+                    }
+
+                }
+              );
+          },
+          eventName: "ready"
+        }
+      ];
+
     useEffect(() => {
-        console.log(props)
-        fetchCsv(props.country, props.start, props.end);
+        const getAnnotations = async () => {
+            let ans = []
+            if(localStorage.getItem('gdpAnnotations')){
+                ans = await JSON.parse(localStorage.getItem('gdpAnnotations'));
+            }
+            setAnnotations(ans) 
+
+        }
+            getAnnotations().then(res=>
+                {
+                    fetchCsv(props.country, props.start, props.end);
+                });
+
     }, [props]);
+
+
+    function annotate (e){
+        e.preventDefault();
+        console.log(selectedYear, selectedIndex, annotationText);
+        let ans = annotations;
+        let index = ans.findIndex((item => item.year === selectedYear));
+        if(index>=0){
+            ans[index].annotation = annotationText;
+        }
+        else
+        {
+            ans.push(
+                {
+                    year: selectedYear,
+                    annotation: annotationText
+                }
+            )
+        }
+        setAnnotations(ans)
+        localStorage.setItem("gdpAnnotations", JSON.stringify(ans));
+        // window.location.reload();
+    }
+    function annotationTextBox () {
+        return (
+
+            <>
+           <form onSubmit={annotate}>
+                Add Annotation to Year: {selectedYear}
+                <input type='text' onChange = {(e)=> {setAnnotationText(e.target.value)}}/>
+                <button type='submit'> -></button>
+                </form>
+            </>
+        )
+    }
+
+    async function getPointToYear(point){
+        const year_index = point + 1        
+        const year= parsedCsvData[year_index][0]
+        console.log(year_index, year)
+        setSelectedYear(year)
+        setSelectedIndex(year_index)
+
+    }
 
     const options = {
         series: [{ color: "#D9544C" }],
+        tooltip: { isHtml: true },
+        annotations: {
+            textStyle: {
+              fontSize: 12,
+              alwaysOutside: true
+            }
+          }
+
       };
     
   return (
       <>
        
         <Chart
-            chartType="Line"
+            chartType="LineChart"
             width="100%"
             height="200px"
-            data={parsedCsvData}
+            data = {parsedCsvData}
+            // rows={parsedCsvData}
+            // columns={columns}
             options = {options}
+            chartEvents ={chartEvents}
             
         />
+        {selectedYear!=null && annotationTextBox()}
       </>
 
   );
