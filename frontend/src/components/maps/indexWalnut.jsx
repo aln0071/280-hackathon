@@ -76,11 +76,11 @@ const banana1 = [
   const walnuts1 = [
     {
       name: "San Joaquin",
-      position: { lat: 36.6066, lng: 120.1890 }
+      position: { lat: 36.6240, lng: -120.1843 }
     },
     {
         name: "Sacramento",
-        position: { lat: 38.5816, lng: 121.4944 }
+        position: { lat: 38.5816, lng: -121.4944 }
       },   
   ] 
 
