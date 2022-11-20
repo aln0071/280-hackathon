@@ -21,20 +21,19 @@ const banana1 = [
       },      
   ] 
 
-  const banana2 = [
+  const banana2 = [ 
+    {
+        name: "East Java",
+        position: { lat: -7.250445, lng: 112.768845 }
+      },  
+    {
+        name: "West Java",
+        position: { lat: -6.914744, lng: 107.6689 }
+      },  
     {
       name: "Lampung",
       position: { lat: -5.450000, lng: 105.4068 }
     },
-    {
-        name: "East Java",
-        position: { lat: -7.250445, lng: 112.768845 }
-      },   
-      
-    {
-        name: "West Java",
-        position: { lat: -6.914744, lng: 107.6689 }
-      },   
       
     {
         name: "Indonesian Papua",
