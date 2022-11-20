@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.f52c9341.css",
-    "main.js": "/static/js/main.696eed72.js",
-    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
-    "static/media/saudi-imports.csv": "/static/media/saudi-imports.374a8b867b7f81ea9a76.csv",
-    "static/media/egypt-imports.csv": "/static/media/egypt-imports.2906bef6f9e7570592d4.csv",
-    "static/media/gdp_all.csv": "/static/media/gdp_all.e96581869f0072433eea.csv",
-    "static/media/fdi-in.csv": "/static/media/fdi-in.055ea421f42e03d3127c.csv",
-    "static/media/fdi-out.csv": "/static/media/fdi-out.a40855b2f9e4b312829d.csv",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "static/media/walnuts-iran.csv": "/static/media/walnuts-iran.f90566ef67498779a23c.csv",
-    "static/media/philippines-mango.csv": "/static/media/philippines-mango.112fcc51d0f3e482a667.csv",
-    "static/media/philippines-yield.csv": "/static/media/philippines-yield.4b09b8bed6bcc340e99b.csv",
-    "static/media/walnuts-yield.csv": "/static/media/walnuts-yield.1bd17bce0da876ea86a1.csv",
-    "static/media/arrow-down.svg": "/static/media/arrow-down.e10a36de9fd7ddf4fe58174f3aa7a33d.svg",
-    "static/media/arrow-right.svg": "/static/media/arrow-right.bdc975455a2d500c3e2b1067b1be71c5.svg",
-    "index.html": "/index.html",
-    "main.f52c9341.css.map": "/static/css/main.f52c9341.css.map",
-    "main.696eed72.js.map": "/static/js/main.696eed72.js.map",
-    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+    "main.css": "/280-hackathon/static/css/main.f52c9341.css",
+    "main.js": "/280-hackathon/static/js/main.3fedc014.js",
+    "static/js/787.cda612ba.chunk.js": "/280-hackathon/static/js/787.cda612ba.chunk.js",
+    "static/media/saudi-imports.csv": "/280-hackathon/static/media/saudi-imports.374a8b867b7f81ea9a76.csv",
+    "static/media/egypt-imports.csv": "/280-hackathon/static/media/egypt-imports.2906bef6f9e7570592d4.csv",
+    "static/media/gdp_all.csv": "/280-hackathon/static/media/gdp_all.e96581869f0072433eea.csv",
+    "static/media/fdi-in.csv": "/280-hackathon/static/media/fdi-in.055ea421f42e03d3127c.csv",
+    "static/media/fdi-out.csv": "/280-hackathon/static/media/fdi-out.a40855b2f9e4b312829d.csv",
+    "static/media/logo.svg": "/280-hackathon/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/walnuts-iran.csv": "/280-hackathon/static/media/walnuts-iran.f90566ef67498779a23c.csv",
+    "static/media/philippines-mango.csv": "/280-hackathon/static/media/philippines-mango.112fcc51d0f3e482a667.csv",
+    "static/media/philippines-yield.csv": "/280-hackathon/static/media/philippines-yield.4b09b8bed6bcc340e99b.csv",
+    "static/media/walnuts-yield.csv": "/280-hackathon/static/media/walnuts-yield.1bd17bce0da876ea86a1.csv",
+    "static/media/arrow-down.svg": "/280-hackathon/static/media/arrow-down.e10a36de9fd7ddf4fe58174f3aa7a33d.svg",
+    "static/media/arrow-right.svg": "/280-hackathon/static/media/arrow-right.bdc975455a2d500c3e2b1067b1be71c5.svg",
+    "index.html": "/280-hackathon/index.html",
+    "main.f52c9341.css.map": "/280-hackathon/static/css/main.f52c9341.css.map",
+    "main.3fedc014.js.map": "/280-hackathon/static/js/main.3fedc014.js.map",
+    "787.cda612ba.chunk.js.map": "/280-hackathon/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f52c9341.css",
-    "static/js/main.696eed72.js"
+    "static/js/main.3fedc014.js"
   ]
 }
