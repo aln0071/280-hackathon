@@ -7,9 +7,18 @@ const sections = {
     "Macroeconomic (USD)": {
         navigateTo: '',
         subsections: [
-            "GDP (USD)",
-            "FDI Inflows (USD)",
-            "FDI Outflows (USD)"
+            {
+                label: "GDP (USD)",
+                dataTransfer: "GDP (USD)"
+            },
+            {
+                label: "FDI Inflows (USD)",
+                dataTransfer: "FDI Inflows (USD)"
+            },
+            {
+                label: "FDI Outflows (USD)",
+                dataTransfer: "FDI Outflows (USD)"
+            },
         ]
     },
     "Agricultural": {
@@ -84,7 +93,11 @@ export default function Navbar() {
                                     if(typeof subsection === 'string') {
                                         return <li key={`${section}${subsection}`} draggable>{subsection}</li>
                                     } else {
-                                        return <li key={`${section}${subsection.label}`} onClick={() => navigate(subsection.navigateTo)}>{subsection.label}</li>
+                                        if(subsection.dataTransfer) {
+                                            return <li key={`${section}${subsection.label}`} onDragStart={e => e.dataTransfer.setData('text', subsection.dataTransfer)} draggable>{subsection.label}</li>
+                                        } else {
+                                            return <li key={`${section}${subsection.label}`} onClick={() => navigate(subsection.navigateTo)}>{subsection.label}</li>
+                                        }
                                     }
                                 }
                                 )

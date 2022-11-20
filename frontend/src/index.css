@@ -105,3 +105,29 @@ code {
 .agri-chart2 {
   padding-top: 20px;
 }
+
+.drop-zone {
+  width: 100%;
+  height: 100px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visible-item {
+  border: 1px solid gainsboro;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.visible-item:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.visible-items-list {
+  padding: 5px 0px;
+}
