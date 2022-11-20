@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Chart2 from "./chart2";
+import ErrorBoundary from "./ErrorBoundary";
 
 export default function Agricultural() {
 
@@ -155,7 +156,9 @@ export default function Agricultural() {
                 </center>
                 <br />
             </div>
-            <Chart1 data={graphData} />
+            <ErrorBoundary>
+                <Chart1 data={graphData} />
+            </ErrorBoundary>
             <Chart2 data={graphData} crop={crop} year={year}/>
         </div>
     )
