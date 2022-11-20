@@ -130,8 +130,8 @@ const banana1 = [
 
 export default function Crops() {
     return <div>
-        <SimpleMaps places={banana1}></SimpleMaps>
+        <SimpleMaps places={walnuts1}></SimpleMaps>
         <br></br>
-        <SimpleMaps places={banana2}></SimpleMaps>
+        <SimpleMaps places={walnuts2}></SimpleMaps>
     </div>
 }

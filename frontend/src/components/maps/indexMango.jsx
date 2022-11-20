@@ -128,10 +128,10 @@ const banana1 = [
   ] 
   
 
-export default function Crops() {
+export default function CropsMango() {
     return <div>
-        <SimpleMaps places={banana1}></SimpleMaps>
+        <SimpleMaps places={mangos1}></SimpleMaps>
         <br></br>
-        <SimpleMaps places={banana2}></SimpleMaps>
+        <SimpleMaps places={mangos2}></SimpleMaps>
     </div>
 }

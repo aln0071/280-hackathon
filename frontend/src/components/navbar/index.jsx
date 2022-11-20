@@ -31,9 +31,18 @@ const sections = {
     "Crops": {
         navigateTo: 'crops',
         subsections: [
-            "Banana",
-            "Mangos",
-            "Walnuts"
+            {
+                label: "Banana",
+                navigateTo: "crops"
+            },
+            {
+                label: "Mangos",
+                navigateTo: "crops-mango"
+            },
+            {
+                label: "Walnuts",
+                navigateTo: "crops-walnut"
+            }
         ]
     },
     "Speciality Crops": {
