@@ -9,15 +9,15 @@ const sections = {
         subsections: [
             {
                 label: "GDP (%)",
-                dataTransfer: "GDP (USD)"
+                dataTransfer: "GDP (%)"
             },
             {
                 label: "FDI Inflows (%)",
-                dataTransfer: "FDI Inflows (USD)"
+                dataTransfer: "FDI Inflows (%)"
             },
             {
                 label: "FDI Outflows (%)",
-                dataTransfer: "FDI Outflows (USD)"
+                dataTransfer: "FDI Outflows (%)"
             },
         ]
     },

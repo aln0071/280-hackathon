@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 
-const validItems = ['GDP (USD)', 'FDI Inflows (USD)', 'FDI Outflows (USD)']
+const validItems = ['GDP (%)', 'FDI Inflows (%)', 'FDI Outflows (%)']
 
 
 export default function MacroEconomic() {
