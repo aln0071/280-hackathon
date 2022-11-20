@@ -5,7 +5,7 @@ import arrowDown from '../../icons/arrow-down.svg';
 
 const sections = {
     "Macroeconomic (USD)": {
-        navigateTo: '',
+        navigateTo: 'macroEconomic',
         subsections: [
             "GDP (USD)",
             "FDI Inflows (USD)",
@@ -20,14 +20,14 @@ const sections = {
             "FDI Outflows (USD)"
         ]
     },
-    "Debt Services": {
-        navigateTo: 'debt',
-        subsections: [
-            "Reserves",
-            "GNI",
-            "Total Debt (%)"
-        ]
-    },
+    // "Debt Services": {
+    //     navigateTo: 'debt',
+    //     subsections: [
+    //         "Reserves",
+    //         "GNI",
+    //         "Total Debt (%)"
+    //     ]
+    // },
     "Crops": {
         navigateTo: 'crops',
         subsections: [
