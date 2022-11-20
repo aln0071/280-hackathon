@@ -83,7 +83,7 @@ export default function GDP(props) {
     
         fetchCsv(props.country, props.start, props.end);
 
-    }, [props,fr]);
+    }, [props,fr,  `${annotations}`]);
 
 
     function annotate (e){
@@ -106,11 +106,12 @@ export default function GDP(props) {
         setAnnotations(ans)
         localStorage.setItem("gdpAnnotations", JSON.stringify(ans));
         window.location.reload();
+        console.log("state", annotations)
     }
     function annotationTextBox () {
         return (
             <>
-           <form onSubmit={annotate}>
+           <form onSubmit={annotate} >
                 Add Annotation to Year {selectedYear} : 
                 <input type='text' onChange = {(e)=> {setAnnotationText(e.target.value)}}/>
                 <button type='submit'> Save</button>
@@ -141,7 +142,7 @@ export default function GDP(props) {
       };
     
   return (
-      <>
+      <>{JSON.stringify(annotations)}
        
         <Chart
             chartType="LineChart"
@@ -155,7 +156,7 @@ export default function GDP(props) {
             
         />
         <br></br>
-        <p class="text-secondary">
+        <p class="text-secondary" style = {{display: 'inline-block'}} >
         {(fr==="true")?
         (selectedYear!=null && annotationTextBox())
         :"Only food researchers can add annotations."}
