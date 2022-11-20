@@ -2,7 +2,7 @@ import './App.css';
 import Footer from './components/footer';
 import Header from './components/header';
 import Navbar from './components/navbar';
-import { TimeSeries } from './components/macroeconomic/time-series';
+import MacroEconomic  from './components/macroeconomic';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Agricultural from './components/agricultural';
 import React from 'react';
@@ -21,7 +21,7 @@ function App() {
               <Route path='/philippines-mango' element={<PhilippinesMango />} />
               <Route path='/walnuts-iran' element={<WalnutsIran />} />
               <Route path='/agricultural' element={<Agricultural />} />
-              <Route path='/timeseries' element={<TimeSeries />} />
+              <Route path='/macroeconomic' element={<MacroEconomic />} />
             </Routes>
           </div>
         </HashRouter>

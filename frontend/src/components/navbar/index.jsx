@@ -5,7 +5,7 @@ import arrowDown from '../../icons/arrow-down.svg';
 
 const sections = {
     "Macroeconomic (USD)": {
-        navigateTo: '',
+        navigateTo: 'macroeconomic',
         subsections: [
             "GDP (USD)",
             "FDI Inflows (USD)",

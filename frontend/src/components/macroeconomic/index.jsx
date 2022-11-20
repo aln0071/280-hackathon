@@ -8,7 +8,7 @@ import Slider from '@mui/material/Slider';
 import * as d3 from 'd3';
 
 
-export function TimeSeries() {
+export default function TimeSeries() {
     const [parsedCsvData, setParsedCsvData] = useState([]);
     const [country, setCountry] = useState('United States')
     const [start, setStart] = useState(parseInt('1990'));
