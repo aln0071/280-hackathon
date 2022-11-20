@@ -129,9 +129,11 @@ const banana1 = [
   
 
 export default function CropsMango() {
-    return <div>
+    return (
+    <div style={{padding:'20px', paddingLeft:'50px'}}>
+        <h3><center>Speaciality Crops - Mango</center></h3><br />
         <SimpleMaps places={mangos1}></SimpleMaps>
         <br></br>
         <SimpleMaps places={mangos2}></SimpleMaps>
-    </div>
+    </div>)
 }

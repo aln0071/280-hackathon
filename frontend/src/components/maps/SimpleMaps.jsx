@@ -3,8 +3,8 @@ import { GoogleMap, LoadScript,Circle,Marker } from '@react-google-maps/api';
 
 
 const mapContainerStyle = {
-    height: "200px",
-    width: "400px"
+    height: "300px",
+    width: "600px"
   }
 
 
@@ -13,6 +13,7 @@ class SimpleMaps extends Component {
   
   render() {
     return (
+    <div style={{marginLeft:"4rem"}}>
       <LoadScript
         googleMapsApiKey="AIzaSyBbeRcs-pasAaXrl5Ph3K-I4Zcd2SgCRKA"
       >
@@ -31,6 +32,7 @@ class SimpleMaps extends Component {
             }
         </GoogleMap>
       </LoadScript>
+      </div>
     )
   }
 }
