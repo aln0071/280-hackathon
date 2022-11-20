@@ -14,11 +14,7 @@ const sections = {
     },
     "Agricultural": {
         navigateTo: 'agricultural',
-        subsections: [
-            "GDP (USD)",
-            "FDI Inflows (USD)",
-            "FDI Outflows (USD)"
-        ]
+        subsections: []
     },
     // "Debt Services": {
     //     navigateTo: 'debt',
@@ -98,6 +94,6 @@ export default function Navbar() {
                 </div>
             )
         }
-        Import/Export Flow
+        {/* Import/Export Flow */}
     </div>
 }

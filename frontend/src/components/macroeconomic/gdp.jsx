@@ -50,7 +50,6 @@ export default function GDP(props) {
                     rows.slice(0, rows.length-5)
                     let datasource = [columns, ...rows]
                     setParsedCsvData(datasource)
-                    console.log(datasource)
                     return d;
                 } 
             })

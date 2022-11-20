@@ -24,7 +24,6 @@ export default function FDI_OUT(props) {
                 { 
                     let dataSource = [];
                     dataSource.push(columns);
-                    console.log(d)
                     for (const [key, value] of Object.entries(d)){
                         if (parseInt(key)>=start && parseInt(key)<=end){
                             let row = [];
