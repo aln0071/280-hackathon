@@ -132,8 +132,14 @@ export default function Crops() {
     return (
     <div style={{padding:'20px', paddingLeft:'50px'}}>
         <h3><center>Speaciality Crops - Banana</center></h3><br />
-        <SimpleMaps places={banana1}></SimpleMaps>
+        <SimpleMaps places={banana1} place="China" 
+        description="Most bananas are grown in the south, mainly in Guandong, 
+Guangxi, Yunnan, and Hainan"></SimpleMaps>
         <br></br>
-        <SimpleMaps places={banana2}></SimpleMaps>
+        <SimpleMaps places={banana2} place="Indonesia"
+        description="The major growing regions are 
+        Lampung, East Java, and West 
+        Java. Indonesian Papua in the 
+        east "></SimpleMaps>
     </div>)
 }

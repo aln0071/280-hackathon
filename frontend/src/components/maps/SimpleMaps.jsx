@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { GoogleMap, LoadScript,Circle,Marker } from '@react-google-maps/api';
+import {Card} from 'react-bootstrap';
 
 
 const mapContainerStyle = {
@@ -32,6 +33,15 @@ class SimpleMaps extends Component {
             }
         </GoogleMap>
       </LoadScript>
+      <br></br>
+        <Card>
+        <Card.Header as="h5">{this.props.place}</Card.Header>
+        <Card.Body>
+            <Card.Text>
+            {this.props.description}
+            </Card.Text>
+        </Card.Body>
+        </Card>
       </div>
     )
   }

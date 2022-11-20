@@ -132,8 +132,12 @@ export default function CropsMango() {
     return (
     <div style={{padding:'20px', paddingLeft:'50px'}}>
         <h3><center>Speaciality Crops - Mango</center></h3><br />
-        <SimpleMaps places={mangos1}></SimpleMaps>
+        <SimpleMaps places={mangos1} place="Philippines" description="Philippines, the largest production areas are 
+Pangasinan in Luzon, West and Central Visas, 
+Davao Region, and Cotabato Province for 
+Mindanao"></SimpleMaps>
         <br></br>
-        <SimpleMaps places={mangos2}></SimpleMaps>
+        <SimpleMaps places={mangos2} place="India" description="The major growing regions are 
+Andhra Pradesh"></SimpleMaps>
     </div>)
 }

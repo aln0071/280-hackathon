@@ -132,8 +132,12 @@ export default function Crops() {
     return (
     <div style={{padding:'20px', paddingLeft:'50px'}}>
         <h3><center>Speaciality Crops - Walnut</center></h3><br />
-        <SimpleMaps places={walnuts1}></SimpleMaps>
+        <SimpleMaps places={walnuts1} place="California" description="USA – major areas are San Joaquin and 
+Sacramento Valleys"></SimpleMaps>
         <br></br>
-        <SimpleMaps places={walnuts2}></SimpleMaps>
+        <SimpleMaps places={walnuts2} place="Iran" description="Kerman, Kermanshah, Hamedan, Lorestan, 
+Kohgilouyeh-Boyerahmad , Khorasan Razavi, 
+Bakhtiari, Eastern and Western Azerbaijan and 
+Markazi"></SimpleMaps>
     </div>)
 }
