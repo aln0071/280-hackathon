@@ -35,6 +35,19 @@ const sections = {
             "Mangos",
             "Walnuts"
         ]
+    },
+    "Speciality Crops": {
+        navigateTo: 'walnuts-iran',
+        subsections: [
+            {
+                label: "Walnuts Iran",
+                navigateTo: "walnuts-iran"
+            },
+            {
+                label: "Philippines - Mangos",
+                navigateTo: "philippines-mango"
+            },
+        ]
     }
 }
 
@@ -62,8 +75,13 @@ export default function Navbar() {
                     {!openSections[index] &&
                         <ul>
                             {
-                                sections[section].subsections.map(subsection =>
-                                    <li key={`${section}${subsection}`} draggable>{subsection}</li>
+                                sections[section].subsections.map(subsection => {
+                                    if(typeof subsection === 'string') {
+                                        return <li key={`${section}${subsection}`} draggable>{subsection}</li>
+                                    } else {
+                                        return <li key={`${section}${subsection}`} onClick={() => navigate(subsection.navigateTo)}>{subsection.label}</li>
+                                    }
+                                }
                                 )
                             }
                         </ul>
